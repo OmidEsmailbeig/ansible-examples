@@ -1,0 +1,25 @@
+---
+- name: Install Nginx
+  apt:
+    update_cache: yes
+    name: nginx
+    state: present
+    
+- name: Copy Nginx config file
+  copy:
+    src: ../files/default
+    dest: /etc/nginx/sites-enabled/default
+  notify:
+    - Restart Nginx
+
+- name: Create Nginx data directory
+  file:
+    state: directory
+    recurse: yes
+    path: /opt/nginx
+
+- name: Copy index file
+  copy:
+    src: ../files/index.html
+    dest: /opt/nginx/index.html
+
