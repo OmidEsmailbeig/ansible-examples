@@ -1,6 +1,6 @@
-# Automate Docker installation using Ansible
+# Using Ansible Vault for transferring sensitive files
 
 Copyright &copy; 2022 Omid Esmailbeig <omid.delta96@gmail.com>
 
-The example will automatically upgrade the systems and install Docker
-if it's not installed
+Example of transferring sensitive config file by using 
+Ansible Vault and templates
